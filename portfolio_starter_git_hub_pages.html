@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YOUR NAME — Portfolio</title>
+  <meta name="description" content="Portfolio of YOUR NAME: projects, experience, and contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0d10; --panel:#11141a; --muted:#93a1b0; --text:#e8edf2; --accent:#6ee7ff; --accent2:#a78bfa; --card:#0f1318; --border:rgba(255,255,255,.08)
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{opacity:.9}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:linear-gradient(180deg,rgba(11,13,16,.95),rgba(11,13,16,.65),transparent);backdrop-filter:saturate(140%) blur(8px);z-index:10}
+    nav{display:flex;gap:18px;align-items:center;justify-content:space-between;padding:10px 0}
+    .brand{font-weight:700;letter-spacing:.5px}
+    .nav-links{display:flex;gap:16px}
+    .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);padding:10px 14px;border-radius:14px;background:var(--panel)}
+    .btn:hover{transform:translateY(-1px)}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:36px 0 18px}
+    .badge{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--border);border-radius:999px;padding:6px 10px;color:var(--muted)}
+    h1{font-size:40px;line-height:1.1;margin:14px 0 10px}
+    p.lede{color:var(--muted);font-size:18px;max-width:66ch}
+    .avatar{width:210px;height:210px;border-radius:20px;background:linear-gradient(135deg,var(--accent2),var(--accent));padding:3px}
+    .avatar img{width:100%;height:100%;object-fit:cover;border-radius:18px;display:block}
+    .section{padding:28px 0}
+    .section h2{font-size:24px;margin:0 0 14px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:10px}
+    .card h3{margin:4px 0 0;font-size:18px}
+    .pill{font-size:12px;color:var(--muted);border:1px solid var(--border);padding:4px 8px;border-radius:999px}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    footer{border-top:1px solid var(--border);padding:24px 0;color:var(--muted)}
+    .timeline{display:grid;gap:12px}
+    .item{display:grid;grid-template-columns:120px 1fr;gap:14px}
+    .item .when{color:var(--muted)}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+    /* Mobile */
+    @media (max-width: 860px){
+      .hero{grid-template-columns:1fr;}
+      .grid{grid-template-columns:1fr}
+      .item{grid-template-columns:1fr}
+      nav .nav-links{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav aria-label="Main">
+        <a class="brand" href="#">YOUR NAME</a>
+        <div class="nav-links">
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="badge">👋 Hello, I’m <strong>&nbsp;YOUR NAME</strong></span>
+        <h1>Embedded & FPGA Engineer focused on verification, RTOS, and system design.</h1>
+        <p class="lede">I build reliable systems: from formal & emulation workflows to firmware on STM32 and Zynq. I love turning messy requirements into clean, testable hardware–software solutions.</p>
+        <div class="cta" style="margin-top:16px">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn" href="mailto:you@example.com">Email me</a>
+          <a class="btn" href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div style="justify-self:center">
+        <div class="avatar" aria-hidden="true">
+          <img src="assets/avatar.jpg" alt="Portrait of YOUR NAME" />
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="row">
+            <span class="pill">SystemVerilog</span>
+            <span class="pill">UVM</span>
+            <span class="pill">Formal</span>
+          </div>
+          <h3>Round‑Robin Arbiter — Formal + UVM</h3>
+          <p>Verified fairness and latency guarantees using SEQ checks in VC Formal; mirrored scenarios in a UVM testbench to cross‑validate proofs with simulation.</p>
+          <p><a href="https://github.com/YOUR_GITHUB/arbiter" target="_blank" rel="noopener">Repo ↗</a></p>
+        </article>
+        <article class="card">
+          <div class="row">
+            <span class="pill">C</span>
+            <span class="pill">FreeRTOS</span>
+            <span class="pill">STM32</span>
+          </div>
+          <h3>Environmental Controller — RTOS on STM32</h3>
+          <p>Multi‑task PID loops for temp/humidity/light with I²C sensors (BME280, TSL2561) and PWM outputs. Structured drivers and HAL abstraction for portability.</p>
+          <p><a href="https://github.com/YOUR_GITHUB/env-controller" target="_blank" rel="noopener">Repo ↗</a></p>
+        </article>
+        <article class="card">
+          <div class="row">
+            <span class="pill">Veloce</span>
+            <span class="pill">SCEMI</span>
+            <span class="pill">DPI‑C</span>
+          </div>
+          <h3>TBX Emulation Flow — SHA‑256</h3>
+          <p>Partitioned HVL/HDL, built SCEMI pipes for acceleration, and automated regressions; achieved 20× speedup vs simulation on long message tests.</p>
+          <p><a href="https://github.com/YOUR_GITHUB/tbx-sha256" target="_blank" rel="noopener">Repo ↗</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <div class="item">
+          <div class="when">2025 — Present</div>
+          <div>
+            <strong>Student Ambassador · Portland State University</strong>
+            <p class="muted">Represented PSU, supported orientations, and led campus tours.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="when">2024 — 2025</div>
+          <div>
+            <strong>Verification Projects · PSU ECE</strong>
+            <p>UVM agents, coverage‑driven verification, and formal property checks for course and research modules.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>Best way to reach me: <a href="mailto:you@example.com">you@example.com</a>. I’m open to internships and roles in verification, firmware, and FPGA systems.</p>
+      <!-- Optional form via Formspree (replace YOUR_FORM_ID) -->
+      <!--
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="card">
+        <label>
+          <span class="sr-only">Your email</span>
+          <input name="email" type="email" placeholder="Your email" required style="width:100%;padding:12px;border-radius:12px;border:1px solid var(--border);background:var(--panel);color:var(--text);">
+        </label>
+        <label>
+          <span class="sr-only">Message</span>
+          <textarea name="message" placeholder="Message" required rows="4" style="width:100%;margin-top:8px;padding:12px;border-radius:12px;border:1px solid var(--border);background:var(--panel);color:var(--text);"></textarea>
+        </label>
+        <button class="btn" type="submit">Send</button>
+      </form>
+      -->
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>© <span id="y"></span> YOUR NAME. Built with ❤️ and GitHub Pages.</small>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
