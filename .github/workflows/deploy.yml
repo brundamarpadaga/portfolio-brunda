@@ -15,15 +15,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        uses: actions/checkout@v3
 
       - name: Setup Node.js
-        uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65
+        uses: actions/setup-node@v3
         with:
           node-version: 20
 
       - name: Vite GitHub Pages Deployer
-        uses: skywarth/vite-github-pages-deployer@7f4b7d7dc56a9f7eaf26b038a2e735e6719a34f8
+        uses: skywarth/vite-github-pages-deployer@v1.5.0
         with:
           public_base_path: /portfolio-brunda/   # 👈 important: your repo name
           build_path: ./dist
