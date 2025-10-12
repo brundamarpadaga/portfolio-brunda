@@ -30,7 +30,7 @@ jobs:
         run: npm run build
 
       - name: Upload build output
-        uses: actions/upload-pages-artifact@56afc609e74202658d3f4e5d5b8dc88f7f8af858
+        uses: actions/upload-pages-artifact@0b8c9c3f3a64b9e70a4296c84e8de15c41f47830
         with:
           path: ./dist
 
