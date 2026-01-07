@@ -1,28 +1,101 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brunda Marpadaga | Embedded Systems Engineer</title>
-    <meta name="description" content="Embedded Firmware Engineer specializing in real-time systems, FreeRTOS, and FPGA design. Explore my embedded systems projects and experience." />
-    <meta name="author" content="Brunda Marpadaga" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brunda Marpadaga</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <meta property="og:title" content="Brunda Marpadaga | Embedded Systems Engineer" />
-    <meta property="og:description" content="Embedded Firmware Engineer specializing in real-time systems, FreeRTOS, and FPGA design." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  <header>
+    <h1>Brunda Marpadaga</h1>
+    <p>Embedded Systems • Firmware • Verification</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#personality">Beyond Engineering</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-    <script type="module" crossorigin src="./assets/index-BVyA1W6E.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-gBymVhAD.css">
-  </head>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m a Master’s student in Electrical and Computer Engineering at Portland State University,
+      specializing in Embedded Systems, Firmware, and Hardware–Software co-design.
+      I enjoy building systems from bare metal to Linux and validating them through simulation,
+      emulation, and real hardware.
+    </p>
+  </section>
 
-  <body>
-    <div id="root"></div>
-  </body>
+  <section id="projects">
+    <h2>Selected Projects</h2>
+
+    <div class="project">
+      <h3>Embedded Linux Firmware Bring-Up on Zynq SoC</h3>
+      <p>
+        Brought up Embedded Linux on Zynq-7000 using PetaLinux. Integrated AXI GPIO and IIC,
+        wrote C firmware for peripheral control, debugged device-tree and kernel drivers, and
+        validated PS–PL interfaces.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>FPGA-Based Real-Time Environmental Control System</h3>
+      <p>
+        Designed a MicroBlaze-based embedded system on Nexys-A7 with FreeRTOS.
+        Implemented I2C drivers for sensors and used PID control with PWM outputs
+        for environmental regulation.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Smart Transit Display (Android + ESP32 + MQTT)</h3>
+      <p>
+        Built an Android app using Jetpack Compose and MVVM. Integrated TriMet APIs and
+        MQTT communication with an ESP32 display for real-time transit information.
+      </p>
+    </div>
+  </section>
+
+  <section id="resume">
+    <h2>Resume</h2>
+    <p>You can view or download my resume below.</p>
+    <a class="button" href="assets/resume.pdf" target="_blank">Download Resume</a>
+  </section>
+
+  <section id="personality">
+    <h2>Beyond Engineering</h2>
+    <p>
+      When I’m not working on embedded systems, I spend my time outdoors and with books.
+      I love hiking in the Pacific Northwest and reading memoirs that explore identity,
+      resilience, and personal growth.
+    </p>
+
+    <div class="gallery">
+      <div>
+        <img src="assets/hiking.jpg" alt="Hiking">
+        <p>Exploring trails and nature</p>
+      </div>
+      <div>
+        <img src="assets/books.jpg" alt="Reading">
+        <p>Reading memoirs & reflective writing</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:brundamarpadaga@gmail.com">brundamarpadaga@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/brundamarpadaga" target="_blank">github.com/brundamarpadaga</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/brundamarpadaga" target="_blank">linkedin.com/in/brundamarpadaga</a></p>
+  </section>
+
+  <footer>
+    <p>© 2026 Brunda Marpadaga</p>
+  </footer>
+
+</body>
 </html>
