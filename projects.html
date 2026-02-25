@@ -41,19 +41,23 @@
     </div>
 
     <div class="project">
-      <h3>FPGA-Based Real-Time Environmental Control System</h3>
+      <h3>LED Intensity Control System with PID Feedback Loop</h3>
       <p>
-        Designed a MicroBlaze-based embedded system on Nexys-A7 with FreeRTOS.
-        Implemented I2C drivers for sensors and used PID control with PWM outputs
-        for environmental regulation.
+        Developed a real-time LED intensity control system using MicroBlaze soft processor on Nexys-A7 FPGA. 
+        Implemented PID control loop with TSL2561 light sensor feedback and FreeRTOS task management for 
+        precise luminosity regulation through PWM-controlled LED output.
       </p>
-      <p><strong>Technologies:</strong> MicroBlaze, Nexys-A7, FreeRTOS, I2C, PID Control, PWM, Verilog/VHDL</p>
+      <p><strong>Technologies:</strong> MicroBlaze, Nexys-A7 FPGA, FreeRTOS, TSL2561 Sensor, I2C, PID Control, PWM, C</p>
       <p><strong>Key Achievements:</strong></p>
       <ul style="margin-left: 30px; margin-top: 10px;">
-        <li>Implemented real-time task scheduling with FreeRTOS</li>
-        <li>Developed custom I2C drivers for sensor communication</li>
-        <li>Designed PID controller for precise environmental regulation</li>
+        <li>Designed and implemented PID controller for closed-loop light intensity regulation</li>
+        <li>Developed custom I2C driver for TSL2561 light sensor integration</li>
+        <li>Implemented FreeRTOS tasks for sensor reading, PID computation, and PWM control</li>
+        <li>Achieved stable light intensity control with minimal overshoot and fast settling time</li>
       </ul>
+      <p style="margin-top: 10px;">
+        <a href="https://github.com/brundamarpadaga/TSL2561_freeRTOS_Project" target="_blank" style="text-decoration: underline;">View Project on GitHub →</a>
+      </p>
     </div>
 
     <div class="project">
