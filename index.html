@@ -5,34 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brunda Marpadaga - Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .welcome-animation {
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .welcome-text {
+      font-size: 2.5rem;
+      font-weight: 300;
+      margin-bottom: 30px;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    .intro-text {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out 1s forwards;
+    }
+
+    .cta-buttons {
+      opacity: 0;
+      animation: fadeInUp 1s ease-out 2s forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .highlight {
+      border-bottom: 2px solid #000;
+      padding-bottom: 2px;
+    }
+  </style>
 </head>
 <body>
 
   <header>
-    <h1>Brunda Marpadaga</h1>
-    <p>Embedded Systems • Firmware • Verification</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="resume.html">Resume</a>
-      <a href="personality.html">Beyond Engineering</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <div class="header-content">
+      <h1>Brunda Marpadaga</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="personality.html">Beyond Engineering</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <img src="https://lh3.googleusercontent.com/d/1CZkUchGCGcqMlCeX-e3vWjZid6kzWFPu" alt="Brunda Marpadaga" class="profile-pic">
   </header>
 
   <section id="home">
-    <h2>Welcome</h2>
-    <p>
-      I'm a Master's student in Electrical and Computer Engineering at Portland State University,
-      specializing in Embedded Systems, Firmware, and Hardware–Software co-design.
-    </p>
-    <p>
-      Explore my portfolio to learn more about my projects, experience, and interests.
-    </p>
-    <div style="margin-top: 30px;">
-      <a class="button" href="projects.html">View Projects</a>
-      <a class="button" href="resume.html" style="margin-left: 15px;">View Resume</a>
+    <div class="welcome-animation">
+      <div class="welcome-text">
+        Hello, welcome to Brunda's portfolio!
+      </div>
+      
+      <div class="intro-text">
+        I'm a graduate of <span class="highlight">Portland State University</span> and I love 
+        <span class="highlight">building things</span>—from bare metal firmware to embedded Linux systems. 
+        Explore my portfolio to know more about me and my work.
+      </div>
+
+      <div class="cta-buttons">
+        <a class="button" href="projects.html">View Projects</a>
+        <a class="button" href="about.html" style="margin-left: 15px;">My Story</a>
+      </div>
     </div>
   </section>
 
