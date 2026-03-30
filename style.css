@@ -193,16 +193,58 @@ footer {
     font-size: 0.9rem;
   }
 
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .profile-pic {
+    align-self: center;
+    order: -1;
+    width: 80px;
+    height: 80px;
+  }
+
+  .header-content {
+    width: 100%;
+    text-align: center;
+  }
+
   header h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
 
   nav a {
-    display: inline-block;
-    margin-bottom: 10px;
+    margin-right: 0;
+    font-size: 0.85rem;
   }
 
   .gallery {
     flex-direction: column;
+  }
+
+  .gallery img {
+    height: 250px;
+  }
+
+  .button {
+    font-size: 0.85rem;
+    padding: 8px 16px;
+  }
+
+  .welcome-text {
+    font-size: 1.8rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
   }
 }
