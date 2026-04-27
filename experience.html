@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience - Brunda Marpadaga</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .timeline-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px 0;
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 2px;
+      height: 0;
+      background: #000;
+      transform: translateX(-50%);
+      animation: drawLine 2s ease-out forwards;
+    }
+
+    @keyframes drawLine {
+      to {
+        height: 100%;
+      }
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 60px;
+      opacity: 0;
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    .timeline-item:nth-child(1) { animation-delay: 0.3s; }
+    .timeline-item:nth-child(2) { animation-delay: 0.5s; }
+    .timeline-item:nth-child(3) { animation-delay: 0.7s; }
+    .timeline-item:nth-child(4) { animation-delay: 0.9s; }
+    .timeline-item:nth-child(5) { animation-delay: 1.1s; }
+    .timeline-item:nth-child(6) { animation-delay: 1.3s; }
+    .timeline-item:nth-child(7) { animation-delay: 1.5s; }
+    .timeline-item:nth-child(8) { animation-delay: 1.7s; }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      top: 10px;
+      width: 16px;
+      height: 16px;
+      background: #fff;
+      border: 3px solid #000;
+      border-radius: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+
+    .timeline-content {
+      width: 45%;
+      padding: 20px;
+      border: 1px solid #000;
+      background: #fff;
+      cursor: pointer;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .timeline-content:hover {
+      border: 2px solid #000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .timeline-item.left .timeline-content {
+      margin-right: auto;
+      margin-left: 0;
+    }
+
+    .timeline-item.right .timeline-content {
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    .timeline-date {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    .timeline-title {
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 5px;
+    }
+
+    .timeline-company {
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .timeline-description {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+    }
+
+    .timeline-content:hover .timeline-description {
+      max-height: 500px;
+      opacity: 1;
+      margin-top: 15px;
+    }
+
+    .timeline-description ul {
+      margin-top: 10px;
+      margin-left: 20px;
+    }
+
+    .timeline-description li {
+      margin-bottom: 5px;
+    }
+
+    .section-label {
+      position: absolute;
+      top: -30px;
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .section-label.left-label {
+      left: 0;
+    }
+
+    .section-label.right-label {
+      right: 0;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-line {
+        left: 30px;
+      }
+
+      .timeline-dot {
+        left: 30px;
+      }
+
+      .timeline-content {
+        width: calc(100% - 80px);
+        margin-left: 70px !important;
+        margin-right: 0 !important;
+      }
+
+      .section-label {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <h1>Brunda Marpadaga</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="personality.html">Beyond Engineering</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <img src="https://lh3.googleusercontent.com/d/1CZkUchGCGcqMlCeX-e3vWjZid6kzWFPu" alt="Brunda Marpadaga" class="profile-pic">
+  </header>
+
+  <section id="experience">
+    <h2>Experience & Education</h2>
+    <p style="margin-bottom: 40px;">My professional journey and academic background</p>
+
+    <div class="timeline-container">
+      <span class="section-label left-label">Work Experience</span>
+      <span class="section-label right-label">Education</span>
+      <div class="timeline-line"></div>
+
+      <!-- Greenstand -->
+      <div class="timeline-item left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">March 2026 - Present</div>
+          <div class="timeline-title">Android Developer</div>
+          <div class="timeline-company">Greenstand</div>
+          <div class="timeline-description">
+            <ul>
+              <li>Developed and maintained components for the Treetracker Android & Wallet App</li>
+              <li>Collaborated with distributed contributors to diagnose and resolve issues</li>
+              <li>Implemented UI updates, aligning design specifications for improved user experience</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- PSU Graduation -->
+      <div class="timeline-item right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">December 2025</div>
+          <div class="timeline-title">Master's Degree - Graduated</div>
+          <div class="timeline-company">Portland State University</div>
+          <div class="timeline-description">
+            Electrical and Computer Engineering<br>
+            Focus: Embedded Systems, Design Verification, Hardware Development
+          </div>
+        </div>
+      </div>
+
+      <!-- Student Ambassador -->
+      <div class="timeline-item left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">June 2025 - December 2025</div>
+          <div class="timeline-title">
+            Student Ambassador
+            <a href="https://web.archive.org/web/20251121071740/https://www.pdx.edu/visit/meet-student-ambassadors" 
+               target="_blank" 
+               style="font-size: 0.8rem; color: #666; text-decoration: none; margin-left: 8px;">
+              🔗
+            </a>
+          </div>
+          <div class="timeline-company">Portland State University Admissions</div>
+          <div class="timeline-description">
+            <ul>
+              <li>Represented PSU during outreach and orientation events</li>
+              <li>Supported onboarding of new students, demonstrating teamwork and mentoring</li>
+              <li>Handled diverse questions and issues in high-pressure environments</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- YSEALI -->
+      <div class="timeline-item left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">September 2024 - November 2025</div>
+          <div class="timeline-title">Student Ambassador - YSEALI Program</div>
+          <div class="timeline-company">PSU Center for Public Service</div>
+          <div class="timeline-description">
+            <ul>
+              <li>Liaison for 25 exchange students from 10 Southeast Asian countries</li>
+              <li>Guided students in navigating Portland's public transport system</li>
+              <li>Promoted cultural exchange and understanding</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CyberPDX -->
+      <div class="timeline-item left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">July 2024 - August 2024</div>
+          <div class="timeline-title">
+            CyberPDX Camp Counselor
+            <a href="https://web.archive.org/web/20260427205633/https://www.pdx.edu/engineering/cyberpdx-cybersecurity-camp-native-indigenous-high-school-students" 
+               target="_blank" 
+               style="font-size: 0.8rem; color: #666; text-decoration: none; margin-left: 8px;">
+              🔗
+            </a>
+          </div>
+          <div class="timeline-company">PSU - Maseeh College of Engineering</div>
+          <div class="timeline-description">
+            <ul>
+              <li>Mentored Native and Indigenous high school students during 5-day STEAM camp</li>
+              <li>Led interactive activities focused on CyberSecurity, GenAI, and Computer Science</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- PSU Start -->
+      <div class="timeline-item right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">January 2024</div>
+          <div class="timeline-title">Started Master's Program</div>
+          <div class="timeline-company">Portland State University</div>
+          <div class="timeline-description">
+            Began graduate studies in Electrical and Computer Engineering
+          </div>
+        </div>
+      </div>
+
+      <!-- Prodapt -->
+      <div class="timeline-item left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">July 2022 - December 2023</div>
+          <div class="timeline-title">Associate Software Engineer</div>
+          <div class="timeline-company">Prodapt</div>
+          <div class="timeline-description">
+            <ul>
+              <li>Developed full-stack web applications using Java SpringBoot and MongoDB</li>
+              <li>Implemented RESTful APIs and AngularJS front-end development</li>
+              <li>Worked with Docker containers for application deployment</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bachelor's -->
+      <div class="timeline-item right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">2020 - 2023</div>
+          <div class="timeline-title">Bachelor of Engineering</div>
+          <div class="timeline-company">Vasavi College of Engineering</div>
+          <div class="timeline-description">
+            Electronics and Communications Engineering
+          </div>
+        </div>
+      </div>
+
+      <!-- IIITH -->
+      <div class="timeline-item left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">April 2022 - June 2022</div>
+          <div class="timeline-title">Research Trainee</div>
+          <div class="timeline-company">IIIT Hyderabad - Research Affiliate Program</div>
+          <div class="timeline-description">
+            <ul>
+              <li>Workshop on IoT and oneM2M for Smart Cities</li>
+              <li>Developed air pollution monitoring system with team of 4 students</li>
+              <li>Maintained project over 6 months, promoting IoT standards</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ECIL -->
+      <div class="timeline-item left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">May 2019 - November 2019</div>
+          <div class="timeline-title">Failure Analysis Intern</div>
+          <div class="timeline-company">Electronics Corporation of India Limited (ECIL)</div>
+          <div class="timeline-description">
+            <ul>
+              <li>Identified failures and analyzed schematics for energy meters</li>
+              <li>Implemented corrective actions through debugging and IC replacements</li>
+              <li>Covered multiple production stages: testing, troubleshooting, calibration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diploma -->
+      <div class="timeline-item right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">2016 - 2019</div>
+          <div class="timeline-title">Diploma in Embedded Systems</div>
+          <div class="timeline-company">Government Institute of Electronics</div>
+          <div class="timeline-description">
+            Foundation in embedded systems and electronics
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Brunda Marpadaga</p>
+  </footer>
+
+</body>
+</html>
