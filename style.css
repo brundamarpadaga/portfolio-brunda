@@ -186,6 +186,34 @@ footer {
   color: #666;
 }
 
+.footer-content {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #666;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.footer-link:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.footer-link svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   body {
@@ -246,5 +274,10 @@ footer {
 
   .intro-text {
     font-size: 1rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 12px;
   }
 }
