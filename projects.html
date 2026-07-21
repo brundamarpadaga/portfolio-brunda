@@ -35,18 +35,22 @@
     <h2>Selected Projects</h2>
 
     <div class="project">
-      <h3>Embedded Linux Firmware Bring-Up on Zynq SoC</h3>
+      <h3>Embedded Linux Bring-Up on Zynq-7000 SoC (Zybo Z7-20)</h3>
       <p>
-        Brought up Embedded Linux on Zynq-7000 using PetaLinux. Integrated AXI GPIO and IIC,
-        wrote C firmware for peripheral control, debugged device-tree and kernel drivers, and
-        validated PS–PL interfaces.
+        Brought up embedded Linux on Zynq-7000 using PetaLinux, integrating custom FPGA peripherals
+        (AXI GPIO, AXI IIC) with Linux kernel drivers for LED control and an SSD1306 OLED display
+        driven over I2C. Currently extending the same base project to bring up native PS Ethernet
+        (GEM0) and a BME280 temperature/humidity sensor, publishing sensor data to the cloud over
+        MQTT (HiveMQ) with TLS — all while keeping the original GPIO and I2C peripherals in place.
       </p>
-      <p><strong>Technologies:</strong> Zynq-7000, PetaLinux, AXI, Device Tree, C, Linux Kernel Drivers</p>
+      <p><strong>Technologies:</strong> Zynq-7000, PetaLinux, AXI GPIO, AXI IIC, Device Tree, C, Linux Kernel Drivers, Ethernet (GEM0/macb), MQTT (paho-mqtt-c), TLS, BME280, I2C</p>
       <p><strong>Key Achievements:</strong></p>
       <ul style="margin-left: 30px; margin-top: 10px;">
-        <li>Successfully integrated custom hardware peripherals with Linux kernel</li>
-        <li>Debugged and resolved device-tree configuration issues</li>
-        <li>Validated PS-PL data transfer interfaces</li>
+        <li>Integrated custom AXI GPIO/IIC peripherals with Linux kernel drivers, debugging device-tree and interrupt binding issues</li>
+        <li>Wrote an SSD1306 OLED driver from the datasheet, implementing the I2C protocol, framebuffer management, and GDDRAM addressing</li>
+        <li>Brought up native PS Ethernet (GEM0) via the macb driver and validated DHCP and internet connectivity end to end</li>
+        <li>Diagnosed a TLS handshake failure to a missing battery-backed RTC and fixed it by auto-syncing the clock via ntpdate on interface-up</li>
+        <li>In progress: publishing BME280 sensor readings to HiveMQ Cloud over MQTT/TLS from a custom C application</li>
       </ul>
       <p style="margin-top: 10px;">
         <a href="https://github.com/brundamarpadaga/petalinux-gpio-i2c" target="_blank" class="github-link">
@@ -72,6 +76,30 @@
       </ul>
       <p style="margin-top: 10px;">
         <a href="https://github.com/brundamarpadaga/TSL2561_freeRTOS_Project" target="_blank" class="github-link">
+          View Project on <i class="fa-brands fa-github"></i>
+        </a>
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Cache-Aware Accelerator Design: ACP vs HP0 and HLS Matrix Multiply on Zynq-7020</h3>
+      <p>
+        Designed and benchmarked a cache-aware hardware accelerator on the Zybo Z7-20 (Zynq-7020),
+        comparing the coherent ACP and non-coherent HP0 PS↔PL memory paths, then implemented a
+        two-level tiled matrix-multiply accelerator in Vitis HLS that reads through ACP and writes
+        through HP0 — achieving up to a 4.89× speedup over an ARM Cortex-A9 software baseline.
+      </p>
+      <p><strong>Technologies:</strong> Zynq-7020, Vivado, Vitis HLS, AXI DMA, ACP/HP0, ARM Cortex-A9, C, PL310 L2 Cache, ARM PMU Instrumentation</p>
+      <p><strong>Key Achievements:</strong></p>
+      <ul style="margin-left: 30px; margin-top: 10px;">
+        <li>Benchmarked ACP vs HP0 memory paths across matrix sizes N=32–512, showing ACP is 1.5–1.9× faster due to coherent, cache-warm reads served by the Snoop Control Unit</li>
+        <li>Designed a two-level tiled matmul HLS kernel (FETCH_TILE=16 DDR fetch tile, TILE=4 fully-unrolled MAC engine) achieving up to 4.89× speedup over software at N=512</li>
+        <li>Iterated through four hardware revisions, diagnosing and resolving DSP/LUT resource tradeoffs, an AXI write/read race condition on a shared bundle, and loop-pipelining (II) violations</li>
+        <li>Instrumented ARM PMU and PL310 L2 cache counters to correlate cache hit rate with measured speedup</li>
+        <li>Documented the full design iteration history, including correctness-testing methodology and known open issues</li>
+      </ul>
+      <p style="margin-top: 10px;">
+        <a href="https://github.com/brundamarpadaga/Cache-Aware-Accelerator-Design" target="_blank" class="github-link">
           View Project on <i class="fa-brands fa-github"></i>
         </a>
       </p>
