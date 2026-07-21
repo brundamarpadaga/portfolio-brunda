@@ -34,108 +34,17 @@
   <section id="projects">
     <h2>Selected Projects</h2>
 
-    <div class="project">
-      <h3>Embedded Linux Bring-Up on Zynq-7000 SoC (Zybo Z7-20)</h3>
-      <p>
-        Brought up embedded Linux on Zynq-7000 using PetaLinux, integrating custom FPGA peripherals
-        (AXI GPIO, AXI IIC) with Linux kernel drivers for LED control and an SSD1306 OLED display
-        driven over I2C. Currently extending the same base project to bring up native PS Ethernet
-        (GEM0) and a BME280 temperature/humidity sensor, publishing sensor data to the cloud over
-        MQTT (HiveMQ) with TLS — all while keeping the original GPIO and I2C peripherals in place.
-      </p>
-      <p><strong>Technologies:</strong> Zynq-7000, PetaLinux, AXI GPIO, AXI IIC, Device Tree, C, Linux Kernel Drivers, Ethernet (GEM0/macb), MQTT (paho-mqtt-c), TLS, BME280, I2C</p>
-      <p><strong>Key Achievements:</strong></p>
-      <ul style="margin-left: 30px; margin-top: 10px;">
-        <li>Integrated custom AXI GPIO/IIC peripherals with Linux kernel drivers, debugging device-tree and interrupt binding issues</li>
-        <li>Wrote an SSD1306 OLED driver from the datasheet, implementing the I2C protocol, framebuffer management, and GDDRAM addressing</li>
-        <li>Brought up native PS Ethernet (GEM0) via the macb driver and validated DHCP and internet connectivity end to end</li>
-        <li>Diagnosed a TLS handshake failure to a missing battery-backed RTC and fixed it by auto-syncing the clock via ntpdate on interface-up</li>
-        <li>In progress: publishing BME280 sensor readings to HiveMQ Cloud over MQTT/TLS from a custom C application</li>
-      </ul>
-      <p style="margin-top: 10px;">
-        <a href="https://github.com/brundamarpadaga/petalinux-gpio-i2c" target="_blank" class="github-link">
-          View Project on <i class="fa-brands fa-github"></i>
-        </a>
-      </p>
+    <div class="project-selector">
+      <h3>Main Project Development Focus</h3>
+      <p style="color: #666; font-size: 0.9rem;">Pick a track to see the project behind it.</p>
+      <div class="tech-tabs" id="tech-tabs"></div>
+      <div class="project-display" id="project-display"></div>
     </div>
-
-    <div class="project">
-      <h3>LED Intensity Control System with PID Feedback Loop</h3>
-      <p>
-        Developed a real-time LED intensity control system using MicroBlaze soft processor on Nexys-A7 FPGA. 
-        Implemented PID control loop with TSL2561 light sensor feedback and FreeRTOS task management for 
-        precise luminosity regulation through PWM-controlled LED output.
-      </p>
-      <p><strong>Technologies:</strong> MicroBlaze, Nexys-A7 FPGA, FreeRTOS, TSL2561 Sensor, I2C, PID Control, PWM, C</p>
-      <p><strong>Key Achievements:</strong></p>
-      <ul style="margin-left: 30px; margin-top: 10px;">
-        <li>Designed and implemented PID controller for closed-loop light intensity regulation</li>
-        <li>Developed custom I2C driver for TSL2561 light sensor integration</li>
-        <li>Implemented FreeRTOS tasks for sensor reading, PID computation, and PWM control</li>
-        <li>Achieved stable light intensity control with minimal overshoot and fast settling time</li>
-      </ul>
-      <p style="margin-top: 10px;">
-        <a href="https://github.com/brundamarpadaga/TSL2561_freeRTOS_Project" target="_blank" class="github-link">
-          View Project on <i class="fa-brands fa-github"></i>
-        </a>
-      </p>
-    </div>
-
-    <div class="project">
-      <h3>Cache-Aware Accelerator Design: ACP vs HP0 and HLS Matrix Multiply on Zynq-7020</h3>
-      <p>
-        Designed and benchmarked a cache-aware hardware accelerator on the Zybo Z7-20 (Zynq-7020),
-        comparing the coherent ACP and non-coherent HP0 PS↔PL memory paths, then implemented a
-        two-level tiled matrix-multiply accelerator in Vitis HLS that reads through ACP and writes
-        through HP0 — achieving up to a 4.89× speedup over an ARM Cortex-A9 software baseline.
-      </p>
-      <p><strong>Technologies:</strong> Zynq-7020, Vivado, Vitis HLS, AXI DMA, ACP/HP0, ARM Cortex-A9, C, PL310 L2 Cache, ARM PMU Instrumentation</p>
-      <p><strong>Key Achievements:</strong></p>
-      <ul style="margin-left: 30px; margin-top: 10px;">
-        <li>Benchmarked ACP vs HP0 memory paths across matrix sizes N=32–512, showing ACP is 1.5–1.9× faster due to coherent, cache-warm reads served by the Snoop Control Unit</li>
-        <li>Designed a two-level tiled matmul HLS kernel (FETCH_TILE=16 DDR fetch tile, TILE=4 fully-unrolled MAC engine) achieving up to 4.89× speedup over software at N=512</li>
-        <li>Iterated through four hardware revisions, diagnosing and resolving DSP/LUT resource tradeoffs, an AXI write/read race condition on a shared bundle, and loop-pipelining (II) violations</li>
-        <li>Instrumented ARM PMU and PL310 L2 cache counters to correlate cache hit rate with measured speedup</li>
-        <li>Documented the full design iteration history, including correctness-testing methodology and known open issues</li>
-      </ul>
-      <p style="margin-top: 10px;">
-        <a href="https://github.com/brundamarpadaga/Cache-Aware-Accelerator-Design" target="_blank" class="github-link">
-          View Project on <i class="fa-brands fa-github"></i>
-        </a>
-      </p>
-    </div>
-
-    <div class="project">
-      <h3>Smart Transit Display (Android + ESP32 + MQTT)</h3>
-      <p>
-        Built an Android app using Jetpack Compose and MVVM. Integrated TriMet APIs and
-        MQTT communication with an ESP32 display for real-time transit information.
-      </p>
-      <p><strong>Technologies:</strong> Android, Jetpack Compose, MVVM, ESP32, MQTT, TriMet API, Kotlin/Java</p>
-      <p><strong>Key Achievements:</strong></p>
-      <ul style="margin-left: 30px; margin-top: 10px;">
-        <li>Integrated real-time public transit APIs</li>
-        <li>Established reliable MQTT communication between mobile app and ESP32</li>
-        <li>Designed clean, modern UI with Jetpack Compose</li>
-      </ul>
-      <p style="margin-top: 15px;"><strong>Project Videos:</strong></p>
-      <div style="margin-left: 30px; margin-top: 10px;">
-        <p>
-          📹 <a href="https://drive.google.com/file/d/1Z5Jh2yFVg97qg7hc6Y9EohN91Y-WYSE_/view?usp=sharing" target="_blank" style="text-decoration: none; color: #000;">
-            Android App Demo - My contribution showcasing UI and MQTT communication
-          </a>
-        </p>
-        <p style="margin-top: 8px;">
-          📹 <a href="https://drive.google.com/file/d/1pk9ox95_QE1srocVnjjqdXMM_vU92fmp/view?resourcekey" target="_blank" style="text-decoration: none; color: #000;">
-            Full System Demo - Complete project with ESP32 display (team collaboration)
-          </a>
-        </p>
-      </div>
-    </div>
+    <script src="assets/projects.js"></script>
 
     <div style="margin-top: 30px; padding: 20px; background-color: #f9f9f9; border-left: 3px solid #000;">
       <p style="margin: 0; font-style: italic;">
-        Oh, and I built this website too 😉
+        Oh, and I built this website too 😉 (with a little help from AI)
       </p>
     </div>
 
