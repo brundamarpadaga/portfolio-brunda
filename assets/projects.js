@@ -6,7 +6,7 @@
       label: 'Embedded Linux',
       title: 'Embedded Linux Bring-Up on Zynq-7000 (Zybo Z7-20)',
       description: 'Brought Linux to life on a bare Zynq SoC — wiring custom FPGA peripherals into the kernel, then pushing the same board onto the network to phone home sensor data to the cloud.',
-      tech: ['PetaLinux', 'Zynq-7000', 'AXI GPIO/IIC', 'Device Tree', 'Linux Kernel', 'Ethernet (GEM0)', 'MQTT', 'TLS'],
+      tech: ['PetaLinux', 'Zynq-7000', 'AXI GPIO/IIC', 'Device Tree', 'Linux Kernel', 'Ethernet (GEM0)', 'IoT', 'MQTT', 'TLS'],
       achievements: [
         'Integrated AXI GPIO & I2C peripherals with custom Linux kernel drivers',
         'Wrote an SSD1306 OLED driver from scratch over I2C',
@@ -30,7 +30,7 @@
       label: 'Android Development',
       title: 'Smart Transit Display (Android + ESP32 + MQTT)',
       description: 'Real-time bus arrivals, from your phone to a hallway display — an Android app talking to an ESP32 over MQTT.',
-      tech: ['Android', 'Jetpack Compose', 'MVVM', 'ESP32', 'MQTT', 'TriMet API', 'Kotlin'],
+      tech: ['Android', 'Jetpack Compose', 'MVVM', 'ESP32', 'IoT', 'MQTT', 'TriMet API', 'Kotlin'],
       achievements: [
         'Built a modern Jetpack Compose UI on an MVVM architecture',
         'Integrated live TriMet transit APIs',
