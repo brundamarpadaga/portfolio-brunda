@@ -69,17 +69,20 @@
     }
 
     .timeline-content {
+      position: relative;
       width: 45%;
       padding: 20px;
       border: 1px solid #000;
+      border-radius: 10px;
       background: #fff;
       cursor: pointer;
-      transition: border-color 0.3s, box-shadow 0.3s;
+      filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.2));
+      transition: border-color 0.3s, filter 0.25s ease;
     }
 
     .timeline-content:hover {
-      border: 2px solid #000;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      border-width: 2px;
+      filter: drop-shadow(7px 7px 5px rgba(0, 0, 0, 0.22));
     }
 
     .timeline-item.left .timeline-content {
