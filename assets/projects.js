@@ -43,13 +43,13 @@
     },
     'computer-org': {
       label: 'Computer Organization',
-      title: 'Cache-Aware Accelerator: ACP vs HP0 + HLS Matmul on Zynq-7020',
-      description: "Chasing memory bandwidth through the Zynq's PS↔PL fabric — comparing coherent and non-coherent DMA paths, then building a custom HLS matrix-multiply accelerator nearly 5× faster than the ARM core alone.",
+      title: 'Tiled Matrix Multiply: ARM vs FPGA Accelerator on Zynq-7020',
+      description: 'Built a tiled matrix-multiply accelerator in Vitis HLS for the Zynq-7020, squeezing out a 4.89× speedup over the ARM core alone — with a side investigation into PS↔PL memory coherency along the way.',
       tech: ['Zynq-7020', 'Vitis HLS', 'AXI DMA', 'ACP/HP0', 'ARM Cortex-A9', 'PL310 L2 Cache', 'C'],
       achievements: [
-        'Benchmarked coherent (ACP) vs non-coherent (HP0) memory paths — ACP up to 1.9× faster',
-        'Designed a two-level tiled HLS matmul kernel reaching a 4.89× speedup over software',
-        'Iterated through 4 hardware revisions, fixing DSP/LUT tradeoffs and an AXI race condition'
+        'Designed a two-level tiled HLS matmul kernel (FETCH_TILE=16, TILE=4 unrolled MAC engine) reaching a 4.89× speedup over software at N=512',
+        'Iterated through 4 hardware revisions, fixing DSP/LUT tradeoffs and an AXI race condition on a shared bundle',
+        'Characterized coherent (ACP) vs non-coherent (HP0) memory paths to inform the accelerator\'s cache flush/invalidate discipline'
       ],
       github: 'https://github.com/brundamarpadaga/Cache-Aware-Accelerator-Design'
     }
