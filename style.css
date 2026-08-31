@@ -144,7 +144,9 @@ a:hover {
 .project-display {
   padding: 25px;
   border: 1px solid #ddd;
+  border-radius: 10px;
   background-color: #fafafa;
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.2));
 }
 
 .tech-stack {
