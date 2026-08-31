@@ -44,12 +44,12 @@
     'computer-org': {
       label: 'Computer Organization',
       title: 'Tiled Matrix Multiply: ARM vs FPGA Accelerator on Zynq-7020',
-      description: 'Built a tiled matrix-multiply accelerator in Vitis HLS for the Zynq-7020, squeezing out a 4.89× speedup over the ARM core alone — with a side investigation into PS↔PL memory coherency along the way.',
-      tech: ['Zynq-7020', 'Vitis HLS', 'AXI DMA', 'ACP/HP0', 'ARM Cortex-A9', 'PL310 L2 Cache', 'C'],
+      description: 'Engineered a C benchmark harness on a Zynq-7020 to put an HLS tiled matmul accelerator to the test against an ARM Cortex-A9 software baseline — measuring up to a 4.89× speedup at N=512.',
+      tech: ['Zynq-7020', 'Vitis HLS', 'AXI DMA', 'ACP/HP0', 'ARM Cortex-A9', 'PL310 L2 Cache', 'C', 'Python'],
       achievements: [
-        'Designed a two-level tiled HLS matmul kernel (FETCH_TILE=16, TILE=4 unrolled MAC engine) reaching a 4.89× speedup over software at N=512',
-        'Iterated through 4 hardware revisions, fixing DSP/LUT tradeoffs and an AXI race condition on a shared bundle',
-        'Characterized coherent (ACP) vs non-coherent (HP0) memory paths to inform the accelerator\'s cache flush/invalidate discipline'
+        'Engineered a C benchmark harness validating the HLS tiled matmul accelerator against an ARM Cortex-A9 baseline, measuring up to 4.89× speedup at N=512',
+        'Wrote low-level C to read ARM PMU and PL310 L2 performance counters via direct CP15 coprocessor and MMIO register access',
+        'Built data-integrity validation tests for the PL↔PS memory paths and wrote a Python script to visualize latency, cache-hit-rate, and speedup across the benchmark sweep'
       ],
       github: 'https://github.com/brundamarpadaga/Cache-Aware-Accelerator-Design'
     }
