@@ -52,13 +52,12 @@ nav a {
   margin-right: 20px;
   text-decoration: none;
   color: #000;
-  border-bottom: 1px solid transparent;
-  transition: border-bottom 0.2s;
+  font-weight: 400;
   font-size: 0.9rem;
 }
 
 nav a:hover {
-  border-bottom: 1px solid black;
+  font-weight: 700;
 }
 
 section {
