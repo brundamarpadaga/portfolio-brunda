@@ -6,7 +6,6 @@
     '  <h1>Brunda Marpadaga</h1>',
     '  <nav>',
     '    <a href="index.html">Home</a>',
-    '    <a href="about.html">About</a>',
     '    <a href="experience.html">Experience</a>',
     '    <a href="projects.html">Projects</a>',
     '    <a href="resume.html">Resume</a>',
