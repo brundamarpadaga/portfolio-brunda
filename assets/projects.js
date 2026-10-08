@@ -42,7 +42,7 @@
       ]
     },
     'computer-org': {
-      label: 'Computer Organization',
+      label: 'Computer Architecture',
       title: 'Tiled Matrix Multiply: ARM vs FPGA Accelerator on Zynq-7020',
       description: 'Engineered a C benchmark harness on a Zynq-7020 to put an HLS tiled matmul accelerator to the test against an ARM Cortex-A9 software baseline — measuring up to a 4.89× speedup at N=512.',
       tech: ['Zynq-7020', 'Vitis HLS', 'AXI DMA', 'ACP/HP0', 'ARM Cortex-A9', 'PL310 L2 Cache', 'C', 'Python'],
