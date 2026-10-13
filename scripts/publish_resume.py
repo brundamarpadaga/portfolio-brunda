@@ -9,7 +9,7 @@ from pathlib import Path
 
 import pymupdf
 
-OUTPUT = Path(__file__).resolve().parent.parent / "assets" / "brunda_resume_firmware.pdf"
+OUTPUT = Path(__file__).resolve().parent.parent / "assets" / "brunda_resume.pdf"
 PHONE = re.compile(r"(?:\+?1[\s.-]?)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}")
 
 
