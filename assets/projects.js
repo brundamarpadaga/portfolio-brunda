@@ -43,15 +43,15 @@
     },
     'computer-org': {
       label: 'Computer Architecture',
-      title: 'Tiled Matrix Multiply: ARM vs FPGA Accelerator on Zynq-7020',
-      description: 'Engineered a C benchmark harness on a Zynq-7020 to put an HLS tiled matmul accelerator to the test against an ARM Cortex-A9 software baseline — measuring up to a 4.89× speedup at N=512.',
-      tech: ['Zynq-7020', 'Vitis HLS', 'AXI DMA', 'ACP/HP0', 'ARM Cortex-A9', 'PL310 L2 Cache', 'C', 'Python'],
+      title: 'Dual-Core AMP Benchmark: HW Accelerator vs SW Matrix Multiply on Zynq-7020',
+      description: 'Both ARM cores, one race — Core 0 runs an HLS matmul accelerator under FreeRTOS while Core 1 runs the software baseline bare-metal, with per-core cache counters measured side by side. The accelerator wins by up to 9.4× at N=512.',
+      tech: ['Zynq-7020', 'AMP', 'FreeRTOS', 'Vitis HLS', 'ARM Cortex-A9', 'PL310 L2 Cache', 'ACP/HP0', 'C', 'Python'],
       achievements: [
-        'Engineered a C benchmark harness validating the HLS tiled matmul accelerator against an ARM Cortex-A9 baseline, measuring up to 4.89× speedup at N=512',
-        'Wrote low-level C to read ARM PMU and PL310 L2 performance counters via direct CP15 coprocessor and MMIO register access',
-        'Built data-integrity validation tests for the PL↔PS memory paths and wrote a Python script to visualize latency, cache-hit-rate, and speedup across the benchmark sweep'
+        'Built a dual-core AMP benchmark (FreeRTOS on Core 0, bare-metal on Core 1) measuring a 6.9×–9.4× accelerator speedup across N=32–512',
+        'Read per-core ARM CP15 PMU and shared PL310 L2 counters to characterize cache behavior under concurrent dual-core load',
+        'Synchronized both cores with an LDREX/STREX inter-core spinlock so they could share one UART without garbled output'
       ],
-      github: 'https://github.com/brundamarpadaga/Cache-Aware-Accelerator-Design'
+      github: 'https://github.com/brundamarpadaga/Cache-Aware-Accelerator-Design/tree/feature/freertos-dual-core'
     }
   };
 

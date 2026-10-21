@@ -1,9 +1,11 @@
 """Redact phone numbers from a resume PDF and publish it to assets/.
 
-Usage:  python scripts/publish_resume.py "path/to/new_resume.pdf"
+Usage:  python scripts/publish_resume.py "path/to/new_resume.pdf" [--no-push]
+Redacts, then commits and pushes the resume. Add --no-push to skip the git step.
 Requires: pip install pymupdf
 """
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -36,7 +38,22 @@ def main(src):
     print(f"Redacted {found} phone number(s) -> {OUTPUT}")
 
 
+def push():
+    repo = OUTPUT.parent.parent
+    git = ["git", "-C", str(repo)]
+    subprocess.run(git + ["add", str(OUTPUT)], check=True)
+    if subprocess.run(git + ["diff", "--cached", "--quiet", "--", str(OUTPUT)]).returncode == 0:
+        print("Resume unchanged - nothing to push.")
+        return
+    subprocess.run(git + ["commit", "-m", "Update resume", "--", str(OUTPUT)], check=True)
+    subprocess.run(git + ["push"], check=True)
+    print("Pushed. The site updates in a minute or two.")
+
+
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
+    args = [a for a in sys.argv[1:] if a != "--no-push"]
+    if len(args) != 1:
         sys.exit(__doc__)
-    main(sys.argv[1])
+    main(args[0])
+    if "--no-push" not in sys.argv:
+        push()
