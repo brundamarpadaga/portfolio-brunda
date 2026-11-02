@@ -8,8 +8,8 @@
       description: 'Brought Linux to life on a bare Zynq SoC — wiring custom FPGA peripherals into the kernel, then pushing the same board onto the network to phone home sensor data to the cloud.',
       tech: ['PetaLinux', 'Zynq-7000', 'AXI GPIO/IIC', 'Device Tree', 'Linux Kernel', 'Ethernet (GEM0)', 'IoT', 'MQTT', 'TLS'],
       achievements: [
-        'Integrated AXI GPIO & I2C peripherals with custom Linux kernel drivers',
-        'Wrote an SSD1306 OLED driver from scratch over I2C',
+        'Integrated custom FPGA fabric peripherals (AXI GPIO, AXI IIC) into PetaLinux via custom device tree overlays (system-user.dtsi) and standard kernel subsystems (sysfs, i2c-dev)',
+        'Developed a userspace C library for the SSD1306 OLED from datasheet specifications, implementing command initialization, GDDRAM page addressing, and display buffer rendering over /dev/i2c-1',
         'Extended the board onto Ethernet, publishing BME280 sensor data to the cloud via MQTT/TLS'
       ],
       github: 'https://github.com/brundamarpadaga/petalinux-gpio-i2c'
