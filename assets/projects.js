@@ -17,24 +17,25 @@
     'freertos': {
       label: 'FreeRTOS',
       title: 'LED Intensity Control with PID Feedback Loop',
-      description: 'A closed-loop light show — real-time PID control tuning LED brightness against a light sensor, all orchestrated by FreeRTOS tasks on a MicroBlaze soft core.',
-      tech: ['MicroBlaze', 'FreeRTOS', 'TSL2561', 'I2C', 'PID Control', 'PWM', 'C'],
+      description: 'A closed-loop light show — a PID controller running as a FreeRTOS task on a MicroBlaze soft core reads a TSL2561 light sensor over I2C and PWM-drives an LED until the measured lux locks onto a setpoint, even when the light is blocked. Built as a two-person team: I owned the PID task and the sensor driver, my teammate owned button/switch input handling and the seven-segment display.',
+      tech: ['MicroBlaze', 'FreeRTOS', 'Nexys A7', 'TSL2561', 'I2C', 'PID Control', 'PWM', 'C'],
       achievements: [
-        'Designed a PID controller for closed-loop light intensity regulation',
-        'Wrote a custom I2C driver for the TSL2561 light sensor',
-        'Coordinated sensing, control, and PWM output across FreeRTOS tasks'
+        'Wrote the TSL2561 I2C driver from the datasheet, handling command-register addressing, sensor calibration, and lux readings',
+        'Implemented the PID task with double-precision P, I, and D terms (each individually switchable), taking gain and setpoint updates from the input task over FreeRTOS message queues and driving the LED through PWM',
+        'Tuned the loop with a settling delay after each PWM change and verified it locks onto a 40 lux setpoint and recovers after the LED is blocked with plastic',
+        'Isolated a faulty sensor by testing it on a Raspberry Pi I2C bus, and shortened task delays so gain changes respond quickly'
       ],
       github: 'https://github.com/brundamarpadaga/TSL2561_freeRTOS_Project'
     },
     'android': {
       label: 'Android Development',
       title: 'Smart Transit Display (Android + ESP32 + MQTT)',
-      description: 'Real-time bus arrivals, from your phone to a hallway display — an Android app talking to an ESP32 over MQTT.',
-      tech: ['Android', 'Jetpack Compose', 'MVVM', 'ESP32', 'IoT', 'MQTT', 'TriMet API', 'Kotlin'],
+      description: 'Real-time bus arrivals, from your phone to a hallway display — a team project where an Android app configures an ESP32 transit display over MQTT and plans full trips across Portland. I built the Android app\'s UI: every screen, the destination search, and the trip itinerary view.',
+      tech: ['Android', 'Jetpack Compose', 'MVVM', 'Kotlin', 'ESP32', 'IoT', 'MQTT', 'TriMet API', 'Google Places API'],
       achievements: [
-        'Built a modern Jetpack Compose UI on an MVVM architecture',
-        'Integrated live TriMet transit APIs',
-        'Bridged the app to an ESP32 display over MQTT'
+        'Built all of the app\'s screens (Setup, Default Mode, Destination Mode) in Jetpack Compose, including line-selection dropdowns and live arrival lists',
+        'Implemented the destination search field using Google Places Autocomplete, turning typed places into coordinates for trip planning',
+        'Parsed TriMet\'s JSON arrivals data and its older XML trip-planner responses, and formatted them into a readable itinerary of walking, bus, and MAX legs with route, direction, and duration'
       ],
       videos: [
         { label: 'Android App Demo', url: 'https://drive.google.com/file/d/1Z5Jh2yFVg97qg7hc6Y9EohN91Y-WYSE_/view?usp=sharing' },
