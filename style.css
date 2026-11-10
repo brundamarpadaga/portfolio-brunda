@@ -148,6 +148,60 @@ a:hover {
   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.2));
 }
 
+.project-display {
+  position: relative;
+}
+
+.project-display h3 {
+  padding-right: 40px;
+}
+
+.insight {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
+
+.insight-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: #f5b301;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.insight-tip {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 5;
+  width: min(280px, 70vw);
+  margin-top: 6px;
+  padding: 10px 12px;
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s;
+}
+
+.insight-tip strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.insight:hover .insight-tip,
+.insight:focus-within .insight-tip {
+  opacity: 1;
+  visibility: visible;
+}
+
 .tech-stack {
   display: flex;
   flex-wrap: wrap;
